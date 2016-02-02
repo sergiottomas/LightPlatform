@@ -8,7 +8,7 @@ function AutoLoader($className){
   if(file_exists(__DIR__ . "/" . $file . ".php")){
     include_once(__DIR__ . "/" . $file . ".php");
   }else{
-    ErrorException("Class or file not found");
+    echo __DIR__ . "/" . $file . ".php";
   }
 };
 
