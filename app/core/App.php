@@ -2,22 +2,14 @@
 
 namespace core;
 
-use \core\Database as Database;
+class App{
+  public static $db;
 
-class App extends Database{
-  private $controller;
-
-  function __construct(){
-    //connect to db
-    parent::__construct();
-
-    //configure request to send a view
-    if(!$this->controller){
-      exit;
-    }
+  public function __construct(){
+    self::$db = new Database();
   }
 
-  public function prepareRequest(){
+  public function init(){
     if(isset($_GET) && empty($_GET)){
       $this->render("home");
     }else{

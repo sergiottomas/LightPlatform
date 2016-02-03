@@ -2,20 +2,14 @@
 
 namespace classes;
 
-use \core\App as App;
+class User extends BaseClass{
+  private $id, $name, $username, $password, $sessionId;
 
-class User{
-  private $app;
-
-  function __construct(){
-    $this->app = $app;
-  }
+  public function setProperty($name, $value){ $this->$name = $value;}
+  public function getProperty($name){return $this->$name;}
 
   public function form(){
-    $parameter = array();
-    $parameter[0] = "Sergio";
-    $parameter[1] = "Carol";
-    print_r($this);
+    $this->render("user/form");
   }
 }
 ?>

@@ -5,7 +5,7 @@ namespace core;
 use \PDO as PDO;
 
 class Database{
-  public $host, $name, $user, $password, $charset, $debug;
+  private $host, $name, $user, $password, $charset, $debug;
   public $pdo, $last_id;
 
   public function __construct(
@@ -16,17 +16,18 @@ class Database{
     $charset = null,
     $debug = null
   ){
-    $this->host = DB_HOST;
-    $this->name = DB_NAME;
-    $this->user = DB_USER;
-    $this->password = DB_PASS;
-    $this->charset = DB_CHARSET;
-    $this->debug = DEBUG;
+    $this->host = defined("DB_HOST") ? DB_HOST : $host;
+    $this->name = defined("DB_NAME") ? DB_NAME : $name;
+    $this->user = defined("DB_USER") ? DB_USER : $user;
+    $this->password = defined("DB_PASS") ? DB_PASS : $password;
+    $this->charset = defined("DB_CHARSET") ? DB_CHARSET : $charset;
+    $this->debug = defined("DEBUG") ? DEBUG : $debug;
 
-    $this->connect();
+    self::connect();
   }
 
   final protected function connect(){
+    $this->last_id = "2";
     $pdo_details = "mysql:host={$this->host};";
     $pdo_details .= "dbname={$this->name};";
     $pdo_details .= "charset={$this->charset};";

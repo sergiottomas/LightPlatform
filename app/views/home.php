@@ -1,5 +1,8 @@
 <?php
 if(!defined("ABS_PATH")) exit;
+
+$user = new \classes\User();
+
 ?>
 
 <!DOCTYPE html>

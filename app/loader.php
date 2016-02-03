@@ -12,5 +12,5 @@
   }
 
   $app = new \core\App();
-  $app->prepareRequest();
+  $app->init(); //start app
 ?>
