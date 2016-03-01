@@ -9,7 +9,7 @@ define("ABS_PATH", dirname(__FILE__)); //root path
 define("UP_PATH", ABS_PATH . $ini_config["app"]["upload_path"]);
 define("HOM_PATH", ABS_PATH . $ini_config["app"]["home_uri"]);
 define("DOC_PATH", $_SERVER["DOCUMENT_ROOT"]);
-
+define("ASSET_PATH", $_SERVER["REQUEST_URI"] . "app/views/_assets/");
 //app configs
 define("DEBUG", $ini_config["app"]["debug"]);
 

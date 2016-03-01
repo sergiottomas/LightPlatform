@@ -3,15 +3,10 @@ if(!defined("ABS_PATH")) exit;
 
 $user = new \classes\User();
 
+$title = "Home";
+
 ?>
 
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Minha Home</title>
-  </head>
-  <body>
-    <h1>Bem vindo a Plataforma que o Sergio está fazendo!</h1>
-  </body>
-</html>
+<?php include ABS_PATH . "/views/_layout/header.php"; ?>
+<h1>Bem vindo a Plataforma que o Sergio está fazendo!</h1>
+<?php include ABS_PATH . "/views/_layout/footer.php"; ?>
